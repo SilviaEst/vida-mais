@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vida+ App</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="titulo-container">
+        <h1>VIDA MAIS<i class="fas fa-plus"></i></h1>
+        <p>Seu assistente diário de saúde e bem-estar.</p>
+    </header>
+
+    <div class="motivacao-card">
+        <i class="fas fa-hand-holding-heart"></i>
+        <p id="motivacao"></p>
+    </div>
+
+    <div class="container">
+        <div class="caixa imc">
+            <h2><i class="fas fa-weight"></i> Calculadora IMC ⚖️</h2>
+            <input type="number" id="idade" placeholder="Idade" min="1" />
+            <select id="sexo">
+                <option value="">Sexo</option>
+                <option value="masculino">Masculino</option>
+                <option value="feminino">Feminino</option>
+            </select>
+            <input type="number" id="peso" placeholder="Peso (kg)" min="1" step="any" />
+            <input type="number" id="altura" placeholder="Altura (m)" min="0.1" step="any" />
+            <button onclick="calcularIMC()">Calcular</button>
+            <p id="resultado"></p>
+        </div>
+
+        <div class="caixa agua">
+            <h2><i class="fas fa-tint"></i> Copos de Água 💧</h2>
+            <p>Copos bebidos hoje:</p>
+            <h3 id="contador">0</h3>
+            <div class="botoes-agua">
+                <button id="botaoAdicionar">+1 Copo</button>
+                <button id="botaoZerar">Zerar</button>
+            </div>
+        </div>
+
+        <div class="caixa cronometro">
+            <h2><i class="fas fa-clock"></i> Ciclo de Produtividade ⏰</h2>
+            <p id="modo"></p>
+            <p id="tempo"></p>
+            <button id="botaoIniciar">Iniciar</button>
+            <button id="botaoPausar" disabled>Pausar</button>
+            <button id="botaoReiniciar">Reiniciar</button>
+            <button onclick="demoRapida()">DEMO</button>
+        </div>
+
+        <div class="caixa desafio">
+            <h2><i class="fas fa-star"></i> Desafio do Dia 🏆</h2>
+            <p id="desafio"></p>
+        </div>
+    </div>
+    
+    
+    <script src="script.js" defer></script>
+
+    <div id="aviso-container" class="hidden">
+        <div class="aviso-card">
+          <p id="aviso-mensagem"></p>
+          <button id="aviso-fechar">Fechar</button>
+        </div>
+      </div>
+</body>
+
+</html>
